@@ -1,0 +1,339 @@
+/* ========================= */
+/* General styles for Tables */
+/* ========================= */
+
+.table > thead > tr > th {
+    border-bottom-width: 2px;
+    font-weight: 700;
+}
+
+.table > thead.primary > tr > th {
+    color: #4285f4;
+}
+
+.table > thead.success > tr > th {
+    color: #34a853;
+}
+
+.table > tbody > tr > td {
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.app-table-responsive {
+    scroller-x: hidden;
+}
+
+@media (max-width: 767.98px) {
+    .app-table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+.table-condensed > thead > tr > th {
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+
+.table-bordered > thead > tr > th {
+    padding: 14px 10px;
+}
+
+.table-bordered tbody > tr td:first-child {
+    padding-left: 10px;
+}
+
+.table-bordered tbody > tr td:last-child {
+    padding-right: 10px;
+}
+
+.table-primary,
+.table-primary > td,
+.table-primary > th {
+    background-color: #4285f4;
+    color: #fff;
+}
+
+.table-hover .table-primary:hover {
+    background-color: #2a75f3;
+    color: #fff;
+}
+
+.table-hover .table-primary:hover > td,
+.table-hover .table-primary:hover > th {
+    background-color: #2a75f3;
+    color: #fff;
+}
+
+.table-success,
+.table-success > td,
+.table-success > th {
+    background-color: #34a853;
+    color: #fff;
+}
+
+.table-hover .table-success:hover {
+    background-color: #2e9549;
+    color: #fff;
+}
+
+.table-hover .table-success:hover > td,
+.table-hover .table-success:hover > th {
+    background-color: #2e9549;
+    color: #fff;
+}
+
+.table-info,
+.table-info > td,
+.table-info > th {
+    background-color: #6ba4ff;
+    color: #fff;
+}
+
+.table-hover .table-info:hover {
+    background-color: #5294ff;
+    color: #fff;
+}
+
+.table-hover .table-info:hover > td,
+.table-hover .table-info:hover > th {
+    background-color: #5294ff;
+    color: #fff;
+}
+
+.table-warning,
+.table-warning > td,
+.table-warning > th {
+    background-color: #fbbc05;
+    color: #fff;
+}
+
+.table-hover .table-warning:hover {
+    background-color: #e3aa04;
+    color: #fff;
+}
+
+.table-hover .table-warning:hover > td,
+.table-hover .table-warning:hover > th {
+    background-color: #e3aa04;
+    color: #fff;
+}
+
+.table-danger,
+.table-danger > td,
+.table-danger > th {
+    background-color: #ea4335;
+    color: #fff;
+}
+
+.table-hover .table-danger:hover {
+    background-color: #e82e1e;
+    color: #fff;
+}
+
+.table-hover .table-danger:hover > td,
+.table-hover .table-danger:hover > th {
+    background-color: #e82e1e;
+    color: #fff;
+}
+
+.table-responsive {
+    border: 0;
+    margin-bottom: 0;
+}
+
+.table-responsive tbody > tr > td {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+@media (max-width: 767.98px) {
+    .table-responsive tbody > tr > td {
+        white-space: nowrap;
+    }
+}
+
+.table tr td .custom-control,
+.table tr th .custom-control {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.table tr td .custom-control .custom-control-indicator,
+.table tr th .custom-control .custom-control-indicator {
+    top: 0;
+}
+
+.table tr td.actions,
+.table tr th.actions {
+    text-align: center;
+}
+
+.table tr td.actions .icon,
+.table tr th.actions .icon {
+    color: #a1a1a1;
+    font-size: 1.3846rem;
+    line-height: 18px;
+}
+
+.table tr td.actions .icon:hover,
+.table tr th.actions .icon:hover {
+    color: gray;
+}
+
+.table tbody tr td.user-avatar img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .table tbody tr td.user-avatar img {
+        display: none;
+    }
+}
+
+.table tbody tr td.cell-detail span {
+    display: block;
+}
+
+.table tbody tr td.cell-detail .cell-detail-description {
+    display: block;
+    font-size: 0.8462rem;
+    color: #999;
+}
+
+.table tbody tr td.user-info img {
+    float: left;
+}
+
+.table tbody tr td.user-info span {
+    padding-left: 40px;
+}
+
+@media (max-width: 767.98px) {
+    .table tbody tr td.user-info span {
+        padding-left: 0;
+    }
+}
+
+.table tbody tr td.milestone {
+    min-width: 100px;
+}
+
+.table tbody tr td.milestone span {
+    display: block;
+    font-size: 0.8462rem;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.table tbody tr td.milestone span.completed {
+    float: right;
+}
+
+.table tbody tr td.milestone .progress {
+    height: 6px;
+    background-color: #e6e6e6;
+    margin-bottom: 0;
+}
+
+.table tbody tr td.milestone .progress .progress-bar {
+    border-radius: 2px;
+}
+
+.table tbody tr.online td:first-child {
+    border-left: 3px solid #34a853;
+    padding-left: 17px;
+}
+
+.table tbody tr.primary td:first-child {
+    border-left: 3px solid #4285f4;
+    padding-left: 17px;
+}
+
+.table tbody tr.info td:first-child {
+    border-left: 3px solid #6ba4ff;
+    padding-left: 17px;
+}
+
+.table tbody tr.success td:first-child {
+    border-left: 3px solid #34a853;
+    padding-left: 17px;
+}
+
+.table tbody tr.warning td:first-child {
+    border-left: 3px solid #fbbc05;
+    padding-left: 17px;
+}
+
+.table tbody tr.danger td:first-child {
+    border-left: 3px solid #ea4335;
+    padding-left: 17px;
+}
+
+.table .number {
+    text-align: right;
+}
+
+.table.table-borderless thead tr th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table.table-borderless tbody tr td {
+    border-top-width: 0;
+}
+
+.card-table table {
+    margin-bottom: 0;
+}
+
+.card-table tr td:first-child,
+.card-table tr th:first-child {
+    padding-left: 20px;
+}
+
+.card-table tr td:last-child,
+.card-table tr th:last-child {
+    padding-right: 20px;
+}
+
+.card-table thead tr th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.table-filters-container {
+    margin: 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.table-filters-container .custom-checkbox {
+    white-space: nowrap;
+}
+
+.table-filters {
+    padding: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.table-filter-title {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #787878;
+}

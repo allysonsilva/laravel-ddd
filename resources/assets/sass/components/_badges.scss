@@ -1,0 +1,45 @@
+/* ======================== */
+/* General styles for Badge */
+/* ======================== */
+
+.badge {
+    font-size: 0.8462rem;
+    font-weight: 700;
+    line-height: 1.55;
+    border: 1px solid #d9d9d9;
+}
+
+.badge-primary {
+    color: #fff;
+    background-color: #4285f4;
+    border: transparent;
+}
+
+.badge-secondary {
+    background-color: #fff;
+    color: #404040;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #34a853;
+    border: transparent;
+}
+
+.badge-info {
+    color: #fff;
+    background-color: #6ba4ff;
+    border: transparent;
+}
+
+.badge-warning {
+    color: #fff;
+    background-color: #fbbc05;
+    border: transparent;
+}
+
+.badge-danger {
+    color: #fff;
+    background-color: #ea4335;
+    border: transparent;
+}

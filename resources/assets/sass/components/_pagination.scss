@@ -1,0 +1,56 @@
+/* ============================= */
+/* General styles for Pagination */
+/* ============================= */
+
+.pagination {
+    padding-left: 0;
+    border-radius: 2px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 575.98px) {
+    .page-item {
+        margin-bottom: 5px;
+    }
+}
+
+.page-item:first-child .page-link {
+    border-radius: 2px;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 2px;
+}
+
+.pagination-rounded .page-item:first-child .page-link {
+    border-radius: 50%;
+}
+
+.pagination-rounded .page-item:last-child .page-link {
+    border-radius: 50%;
+}
+
+.page-link {
+    font-size: 1.077rem;
+    line-height: 14px;
+    font-weight: 400;
+    padding: 0.7692rem 0.9231rem;
+    color: #404040;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-left: 4px;
+}
+
+.page-link > span {
+    line-height: 12px;
+}
+
+.pagination-rounded .page-link {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 14px;
+}

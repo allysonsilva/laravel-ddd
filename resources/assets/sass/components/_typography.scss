@@ -1,0 +1,187 @@
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+p {
+    font-size: inherit;
+    line-height: 21px;
+}
+
+pre {
+    padding: 20px;
+    border: 0;
+    border-radius: 0;
+    background-color: #fafafa;
+    font-size: 0.9231rem;
+    margin: 0 0 9px;
+}
+
+pre code {
+    white-space: pre-wrap;
+}
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.h1 .small,
+.h1 small,
+.h2 .small,
+.h2 small,
+.h3 .small,
+.h3 small,
+.h4 .small,
+.h4 small,
+.h5 .small,
+.h5 small,
+.h6 .small,
+.h6 small,
+h1 .small,
+h1 small,
+h2 .small,
+h2 small,
+h3 .small,
+h3 small,
+h4 .small,
+h4 small,
+h5 .small,
+h5 small,
+h6 .small,
+h6 small {
+    font-weight: 300;
+}
+
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.h4,
+.h5,
+.h6,
+h4,
+h5,
+h6 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.h4 .small,
+.h4 small,
+.h5 .small,
+.h5 small,
+.h6 .small,
+.h6 small,
+h4 .small,
+h4 small,
+h5 .small,
+h5 small,
+h6 .small,
+h6 small {
+    font-size: 75%;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
+.lead {
+    font-size: 1.616rem;
+    line-height: 26px;
+}
+
+p .small,
+p small {
+    font-size: 0.8462rem;
+}
+
+.mark,
+mark {
+    background-color: #fff7e2;
+    padding: 0;
+}
+
+.text-bold {
+    font-weight: 500 !important;
+}
+
+.text-success a {
+    color: #34a853 !important;
+}
+
+.text-success aa:focus,
+.text-success aa:hover {
+    color: #226e36 !important;
+}
+
+.text-warning a {
+    color: #fbbc05 !important;
+}
+
+.text-warning aa:focus,
+.text-warning aa:hover {
+    color: #b18403 !important;
+}
+
+.text-danger a {
+    color: #ea4335 !important;
+}
+
+.text-danger aa:focus,
+.text-danger aa:hover {
+    color: #bf2114 !important;
+}
+
+ol,
+ul {
+    line-height: 20px;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    padding-left: 25px;
+}
+
+.list-unstyled ol,
+.list-unstyled ul {
+    padding-left: 40px;
+}
+
+.blockquote,
+blockquote {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.blockquote p,
+blockquote p {
+    margin-bottom: 18px;
+}
+
+.blockquote ol:last-child,
+.blockquote p:last-child,
+.blockquote ul:last-child,
+blockquote ol:last-child,
+blockquote p:last-child,
+blockquote ul:last-child {
+    margin-bottom: 0;
+}
+
+.blockquote .small,
+.blockquote footer,
+.blockquote small,
+blockquote .small,
+blockquote footer,
+blockquote small {
+    font-size: 1rem;
+}

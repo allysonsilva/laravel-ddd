@@ -1,0 +1,83 @@
+/* ============================ */
+/* General styles for Accordion */
+/* ============================ */
+
+.accordion {
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.accordion .card {
+    margin: 0;
+    padding: 0;
+    border-radius: 3px;
+}
+
+.accordion .card + .card {
+    margin-top: 0.384rem;
+}
+
+.accordion .card-header {
+    padding: 0;
+    margin: 0;
+    border-radius: 3px;
+}
+
+.accordion .card-header button {
+    font-size: 1.385rem;
+    font-weight: 300;
+    padding: 1.385rem 1.692rem;
+    display: block;
+    color: #4285f4;
+    width: 100%;
+    color: #404040;
+    background-color: transparent;
+    text-align: left;
+}
+
+.accordion .card-header button.btn {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0;
+}
+
+.accordion .card-header button.btn:focus {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.accordion .card-header button .icon {
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    font-size: 1.923rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.accordion .card-header button[aria-expanded='true'] {
+    color: #4285f4;
+}
+
+.accordion .card-header button[aria-expanded='true'] .icon {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.accordion .card-body {
+    padding: 0 1.538rem 1.538rem 1.538rem;
+    border-top: 0;
+    line-height: 22px;
+    border-radius: 0 0 3px 3px;
+}
+
+.accordion-color .card .card-header button {
+    color: #fff;
+}
+
+.accordion-color .card .card-header button[aria-expanded='true'] {
+    color: #fff;
+}

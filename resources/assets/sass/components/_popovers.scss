@@ -1,0 +1,27 @@
+/* ========================== */
+/* General styles for Popover */
+/* ========================== */
+
+.popover {
+    font-size: 1rem;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popover .popover-header {
+    margin: 0;
+}
+
+.popover.bottom > .arrow {
+    border-bottom-color: #f7f7f7;
+    top: -10px;
+}
+
+.popover.bottom > .arrow:after {
+    background-color: transparent;
+    top: -2px;
+    margin-left: -10px;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-top-width: 1px;
+    z-index: -1;
+}

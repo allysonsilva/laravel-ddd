@@ -1,0 +1,22 @@
+/* ============================= */
+/* General styles for Breadcrumb */
+/* ============================= */
+
+.breadcrumb {
+    background-color: #f5f5f5;
+    margin-bottom: 18px;
+    padding: 7px 20px 6px;
+    line-height: 16px;
+}
+
+.breadcrumb .icon {
+    font-size: 1.231rem;
+}
+
+.breadcrumb > li + li:before {
+    color: #4d4d4d;
+}
+
+.breadcrumb > .active {
+    color: #4d4d4d;
+}
