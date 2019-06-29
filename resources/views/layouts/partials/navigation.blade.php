@@ -26,12 +26,12 @@
                         <a class="dropdown-item" href="#">
                             <span class="icon mdi mdi-settings"></span> Settings
                         </a>
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a class="dropdown-item" href="#"
                             onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             <span class="icon mdi mdi-power"></span> Logout
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        <form id="logout-form" action="#" method="POST" class="hidden">
                             {{ csrf_field() }}
                         </form>
                     </div>
@@ -40,9 +40,7 @@
 
             <ul class="nav navbar-nav float-right app-icons-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="icon mdi mdi-apps"></span>
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false"><span class="icon mdi mdi-apps"></span></a>
                     <ul class="dropdown-menu app-connections">
                         <li>
                             <div class="list">
