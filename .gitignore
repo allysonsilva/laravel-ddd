@@ -8,6 +8,8 @@
 /public/mix-manifest.json
 /public/storage
 /storage/*.key
+/database/docker/mongodb
+/database/docker/mysql
 /vendor
 .env
 .phpunit.result.cache
