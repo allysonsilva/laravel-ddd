@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\FormServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
 
         /*
          * Application Service Providers...
