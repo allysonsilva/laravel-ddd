@@ -11,6 +11,8 @@ const mix = require('laravel-mix')
  |
  */
 
+mix.setPublicPath('./public')
+
 mix.sass('resources/assets/sass/app.scss', 'public/css/app.css')
    .sass('resources/assets/sass/vendors/fontawesome.scss', 'public/fonts')
    .sass('resources/assets/sass/vendors/material-icons.scss', 'public/fonts')
