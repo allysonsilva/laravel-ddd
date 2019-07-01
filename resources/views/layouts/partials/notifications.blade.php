@@ -1,44 +1,36 @@
 @section('notifications')
-    <script>
+    <!-- **** MESSAGES ALERTS **** -->
+    <script nonce="3VrLCT9ctX">
         Messenger.options = {
             extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
             theme: 'flat'
         };
-    </script>
 
-    <!-- **** MESSAGES ALERTS **** -->
-    @if (session()->has('error'))
-        <script>
+        @if (session()->has('error'))
             Messenger().post({
                 message: "{{ session()->get('error') }}",
                 type: 'error',
                 showCloseButton: true
             });
-        </script>
-    @endif
+        @endif
 
-    @if (session()->has('success'))
-        <script>
+        @if (session()->has('success'))
             Messenger().post({
                 message: "{{ session()->get('success') }}",
                 type: 'success',
                 showCloseButton: true
             });
-        </script>
-    @endif
+        @endif
 
-    @if (session()->has('info'))
-        <script>
+        @if (session()->has('info'))
             Messenger().post({
                 message: "{{ session()->get('info') }}",
                 type: 'info',
                 showCloseButton: true
             });
-        </script>
-    @endif
+        @endif
 
-    @if ($errors->any())
-        <script>
+        @if ($errors->any())
             @foreach($errors->all() as $message)
                 @php
                     $message = html_entity_decode(strip_tags(trim(preg_replace("/\r|\n/", "", $message))));
@@ -50,7 +42,7 @@
                     showCloseButton: true
                 });
             @endforeach
-        </script>
-    @endif
+        @endif
+    </script>
     <!-- **** MESSAGES ALERTS END **** -->
 @show
