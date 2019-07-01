@@ -22,6 +22,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/css/app.css')
    .styles(['resources/assets/css/base.css'], 'public/css/base.css')
    .styles(
         [
+            'node_modules/sweetalert2/dist/sweetalert2.css',
             'resources/assets/libs/amaranjs/css/amaran.min.css',
             'resources/assets/libs/messenger/css/messenger.min.css',
             'resources/assets/libs/messenger/css/messenger-theme-air.min.css',
@@ -39,7 +40,7 @@ mix.js('resources/assets/js/bootstrap.js', 'public/js/bootstrap.js')
             'resources/assets/libs/messenger/js/messenger-theme-flat.min.js',
             'resources/assets/libs/messenger/js/messenger-theme-future.min.js',
             'node_modules/perfect-scrollbar/dist/perfect-scrollbar.js',
-            'node_modules/sweetalert2/dist/sweetalert2.all.min.js',
+            'node_modules/sweetalert2/dist/sweetalert2.js',
             'node_modules/bs-custom-file-input/dist/bs-custom-file-input.min.js',
             'node_modules/bs4-breakpoint-check/js/jquery-breakpoint-check.js',
             'node_modules/jquery-touchswipe/jquery.touchSwipe.min.js',
