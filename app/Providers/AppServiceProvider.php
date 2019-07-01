@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use PDO;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Mail\MailServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -39,5 +41,25 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(resource_path('views/errors'), 'errors');
         $this->loadViewsFrom(resource_path('views/modules'), 'modules');
         $this->loadViewsFrom(resource_path('views/layouts'), 'layouts');
+
+        $this->app->url->forceScheme('https');
+
+        if (version_compare(phpversion(), '5.3.7', '>')) {
+            config(['database.connections.mysql.options' => [
+                PDO::MYSQL_ATTR_SSL_KEY => database_path('docker/mysql/ssl/client-key.pem'),
+                PDO::MYSQL_ATTR_SSL_CERT => database_path('docker/mysql/ssl/client-cert.pem'),
+                PDO::MYSQL_ATTR_SSL_CA => database_path( 'docker/mysql/ssl/ca.pem'),
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+            ]]);
+        }
+
+        if ($this->app->environment('local', 'development', 'staging')) {
+            config(['mail.to' => [
+                'address' => env('MAIL_DEVELOPMENT_ADDRESS'),
+                'name' => env('MAIL_DEVELOPMENT_NAME'),
+            ]]);
+
+            (new MailServiceProvider(app()))->register();
+        }
     }
 }
