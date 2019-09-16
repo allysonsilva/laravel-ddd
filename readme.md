@@ -1,3 +1,12 @@
+# Gerenciamento de Empresas com Fornecedores
+
+- `php artisan migrate`
+- `php artisan db:seed --domain=Users`
+- `php artisan db:seed --domain=Companies`
+- `php artisan db:seed --domain=Suppliers`
+
+## Estrutura da Aplicação - `app`
+
 ```
 app
 ├── Core
