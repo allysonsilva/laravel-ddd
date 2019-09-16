@@ -1,4 +1,11 @@
 @section('notifications')
+
+    @php
+        $cleanMessage = function($message): string {
+            return html_entity_decode(strip_tags(trim(preg_replace("/\r|\n/", "", $message))));
+        };
+    @endphp
+
     <!-- **** MESSAGES ALERTS **** -->
     <script nonce="3VrLCT9ctX">
         Messenger.options = {
@@ -6,41 +13,39 @@
             theme: 'flat'
         };
 
-        @if (session()->has('error'))
+        @empty(! $error = session('error'))
             Messenger().post({
-                message: "{{ session()->get('error') }}",
+                message: "{{ $cleanMessage($error) }}",
                 type: 'error',
                 showCloseButton: true
             });
-        @endif
+        @endempty
 
-        @if (session()->has('success'))
+        @empty(! $success = session('success'))
             Messenger().post({
-                message: "{{ session()->get('success') }}",
+                message: "{{ $cleanMessage($success) }}",
                 type: 'success',
                 showCloseButton: true
             });
-        @endif
+        @endempty
 
-        @if (session()->has('info'))
+        @empty(! $info = session('info'))
             Messenger().post({
-                message: "{{ session()->get('info') }}",
+                message: "{{ $cleanMessage($info) }}",
                 type: 'info',
                 showCloseButton: true
             });
-        @endif
+        @endempty
 
         @if ($errors->any())
             @foreach($errors->all() as $message)
-                @php
-                    $message = html_entity_decode(strip_tags(trim(preg_replace("/\r|\n/", "", $message))));
-                @endphp
 
                 Messenger().post({
-                    message: "{{ $message }}",
+                    message: "{{ $cleanMessage($message) }}",
                     type: 'error',
                     showCloseButton: true
                 });
+
             @endforeach
         @endif
     </script>

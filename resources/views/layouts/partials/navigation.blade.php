@@ -26,13 +26,12 @@
                         <a class="dropdown-item" href="#">
                             <span class="icon mdi mdi-settings"></span> Settings
                         </a>
-                        <a class="dropdown-item" href="#"
-                            onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item dropdown-logout" href="#">
                             <span class="icon mdi mdi-power"></span> Logout
                         </a>
-                        <form id="logout-form" action="#" method="POST" class="hidden">
-                            {{ csrf_field() }}
+                        <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" class="hidden">
+                            @csrf
+                            @method('DELETE')
                         </form>
                     </div>
                 </li>
@@ -67,3 +66,12 @@
         </div>
     </div>
 </nav>
+
+@push('scripts')
+    <script nonce="3VrLCT9ctX">
+        document.querySelector(".dropdown-logout").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById('logout-form').submit();
+        });
+    </script>
+@endpush
