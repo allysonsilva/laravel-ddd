@@ -18,6 +18,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/css/app.css')
    .sass('resources/assets/sass/vendors/material-icons.scss', 'public/fonts')
    .styles(['node_modules/animate.css/animate.min.css'], 'public/css/animate.min.css')
    .styles(['resources/assets/css/bootstrap.css'], 'public/css/bootstrap.css')
+   .styles(['resources/assets/css/custom.css'], 'public/css/custom.css')
    .sass('resources/assets/sass/components/_all.scss', 'public/css/components.css')
    .styles(['resources/assets/css/base.css'], 'public/css/base.css')
    .styles(
