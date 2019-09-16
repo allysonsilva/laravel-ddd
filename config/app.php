@@ -190,13 +190,20 @@ return [
         App\Core\Providers\RouteServiceProvider::class,
 
         /*
-         * Application Service Providers...
+         * Support Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Support\SupportServiceProvider::class,
+
+        /*
+         * Domains ...
+         */
+        App\Domains\DomainServiceProvider::class,
+
+        /*
+         * Units ...
+         */
+        App\Units\Auth\Providers\UnitServiceProvider::class,
+        App\Units\Dashboard\Providers\UnitServiceProvider::class,
 
     ],
 

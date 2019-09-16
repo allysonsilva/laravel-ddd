@@ -1,0 +1,18 @@
+<?php
+
+namespace DummyNamespace;
+
+use NamespacedDummyModel;
+use App\Support\Database\Eloquent\ModelFactory;
+
+class DummyClass extends ModelFactory
+{
+    protected $model = DummyModel::class;
+
+    protected function fields()
+    {
+        return [
+            //
+        ];
+    }
+}
