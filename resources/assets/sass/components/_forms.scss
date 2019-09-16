@@ -383,9 +383,9 @@ select.form-control-xs:not([size]):not([multiple]) {
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-    content: '\f26b';
+    content: '\F12C';
     font-size: 1.5452rem;
-    font-family: 'Material Icons';
+    font-family: 'Material Design Icons';
     margin: 0 0;
     font-weight: 400;
     text-align: center;
@@ -401,12 +401,12 @@ select.form-control-xs:not([size]):not([multiple]) {
 }
 
 .custom-radio .custom-control-input:checked ~ .custom-control-label::after {
-    content: '\f26d';
+    content: '\F764';
     width: 1.77592rem;
     height: 1.77592rem;
     margin: 0 0;
     font-size: 1rem;
-    font-family: 'Material Icons';
+    font-family: 'Material Design Icons';
     text-align: center;
     line-height: 1.8;
 }

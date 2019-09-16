@@ -1,12 +1,1 @@
-// Variables
-// --------------------------
-
-$zmdi-font-name: 'Material Icons' !default;
-$zmdi-css-prefix: mdi-hc !default;
-$zmdi-icon-prefix: mdi !default;
-
-$zmdi-border-color: #9e9e9e !default;
-$zmdi-inverse: #ffffff !default;
-$zmdi-li-width: (30em / 14) !default;
-
-@import '~material-design-iconic-font/scss/material-design-iconic-font.scss';
+@import '@mdi/font/scss/materialdesignicons.scss';
