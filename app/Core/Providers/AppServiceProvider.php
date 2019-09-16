@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace App\Core\Providers;
 
 use PDO;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Mail\MailServiceProvider;
 
@@ -17,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // $this->registerHelpers();
     }
 
     /**
@@ -27,22 +25,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        setlocale(LC_ALL, "pt_BR", "pt_BR.iso-8859-1", "pt_BR.utf-8", "portuguese");
-        Carbon::setLocale('pt_BR');
-
-        Blade::component('layouts.partials.head', 'head');
-        Blade::component('layouts.partials.footer', 'footer');
-        Blade::component('layouts.partials.scripts', 'scripts');
-        Blade::component('layouts.partials.left', 'leftSidebar');
-        Blade::component('layouts.partials.navigation', 'navigation');
-        Blade::component('layouts.partials.notifications', 'notifications');
-
-        $this->loadViewsFrom(resource_path('views/pages'), 'pages');
-        $this->loadViewsFrom(resource_path('views/errors'), 'errors');
-        $this->loadViewsFrom(resource_path('views/modules'), 'modules');
-        $this->loadViewsFrom(resource_path('views/layouts'), 'layouts');
-
         $this->app->url->forceScheme('https');
+
+        if ($this->app->environment('production')) {
+            error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+        } else {
+            error_reporting(E_ALL & ~E_NOTICE);
+        }
 
         if (version_compare(phpversion(), '5.3.7', '>')) {
             config(['database.connections.mysql.options' => [
@@ -60,6 +49,13 @@ class AppServiceProvider extends ServiceProvider
             ]]);
 
             (new MailServiceProvider(app()))->register();
+        }
+    }
+
+    public function registerHelpers()
+    {
+        foreach (glob(app_path('Support/Helpers').DIRECTORY_SEPARATOR.'*.php') as $filename) {
+            require_once $filename;
         }
     }
 }

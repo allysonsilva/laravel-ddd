@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Core\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 
@@ -12,6 +12,6 @@ class EncryptCookies extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'api/*'
     ];
 }

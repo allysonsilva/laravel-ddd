@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Console;
+namespace App\Core\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+    use \App\Core\Console\Traits\ExposeBehaviors;
+
     /**
      * The Artisan commands provided by your application.
      *
