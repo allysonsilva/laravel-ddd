@@ -1,6 +1,6 @@
-<div class="form-group row">
-    <label class="col-12 col-sm-3 col-form-label text-sm-right" for="{{ $name }}"> {{ $textLabel }} </label>
-    <div class="col-12 col-sm-8 col-lg-6">
+<div class="{{ $classComp ?? 'form-group' }}@empty($classCompAround) row @endempty">
+    <label class="{{ $classLabel ?? 'col-12 col-sm-3 col-form-label text-sm-right' }}" for="{{ $name }}"> {{ $textLabel }} </label>
+    <div class="{{ $classCompAround ?? 'col-12 col-sm-8 col-lg-6' }}">
 
         {{-- Inputs que não contêm argumentos de {$value} --}}
         @if (in_array($type, ['password', 'file']))

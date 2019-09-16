@@ -5,7 +5,6 @@
     <meta name="robots" content="noindex, nofollow">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="_token" content="{{ csrf_token() }}">
 
     <link rel="shortcut icon" href="{{ asset('images/logo-fav.png') }}" type="image/png">
 
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="{{ mix('css/base.css') }}">
     <link rel="stylesheet" href="{{ mix('css/components.css') }}">
     <link rel="stylesheet" href="{{ mix('css/libs.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/custom.css') }}">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <link rel="stylesheet" href="{{ mix('fonts/fontawesome.css') }}">

@@ -1,72 +1,409 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+app
+├── Core
+│   ├── Console
+│   │   ├── Kernel.php
+│   │   └── Traits
+│   │       └── ExposeBehaviors.php
+│   ├── Exceptions
+│   │   └── Handler.php
+│   ├── Http
+│   │   ├── Kernel.php
+│   │   └── Middleware
+│   │       ├── Authenticate.php
+│   │       ├── CheckForMaintenanceMode.php
+│   │       ├── EncryptCookies.php
+│   │       ├── RedirectIfAuthenticated.php
+│   │       ├── TrimStrings.php
+│   │       ├── TrustProxies.php
+│   │       └── VerifyCsrfToken.php
+│   └── Providers
+│       ├── AppServiceProvider.php
+│       └── RouteServiceProvider.php
+├── Domains
+│   ├── Companies
+│   │   ├── Console
+│   │   │   └── Closures
+│   │   │       └── ClosureCommands.php
+│   │   ├── Database
+│   │   │   ├── Factories
+│   │   │   │   └── CompanyFactory.php
+│   │   │   ├── Migrations
+│   │   │   │   └── 2019_07_01_203524_create_companies_table.php
+│   │   │   └── Seeders
+│   │   │       └── DatabaseSeeder.php
+│   │   ├── Http
+│   │   │   ├── Controllers
+│   │   │   │   ├── Api
+│   │   │   │   │   └── CompanyController.php
+│   │   │   │   └── CompanyController.php
+│   │   │   ├── Requests
+│   │   │   │   └── CompanyFormRequest.php
+│   │   │   ├── Resources
+│   │   │   │   └── CompanyResource.php
+│   │   │   └── Routes
+│   │   │       ├── Api.php
+│   │   │       └── Web.php
+│   │   ├── Models
+│   │   │   ├── Company.php
+│   │   │   └── Traits
+│   │   │       ├── CompanyBoot.php
+│   │   │       └── CompanyRelationship.php
+│   │   ├── Policies
+│   │   │   └── CompanyPolicy.php
+│   │   ├── Providers
+│   │   │   ├── AuthServiceProvider.php
+│   │   │   ├── CompanyServiceProvider.php
+│   │   │   └── RouteServiceProvider.php
+│   │   ├── Repositories
+│   │   │   ├── CompanyRepository.php
+│   │   │   ├── Criteria
+│   │   │   │   └── JoinUserCriteria.php
+│   │   │   └── Filterable
+│   │   │       └── CompanyBuilderFilter.php
+│   │   ├── Resources
+│   │   │   └── Views
+│   │   │       ├── _filter.blade.php
+│   │   │       ├── _form.blade.php
+│   │   │       ├── _header.blade.php
+│   │   │       ├── create.blade.php
+│   │   │       ├── edit.blade.php
+│   │   │       └── index.blade.php
+│   │   └── Services
+│   │       └── CompanyService.php
+│   ├── DomainServiceProvider.php
+│   ├── Suppliers
+│   │   ├── Console
+│   │   │   └── Closures
+│   │   │       └── ClosureCommands.php
+│   │   ├── Database
+│   │   │   ├── Factories
+│   │   │   │   └── SupplierFactory.php
+│   │   │   ├── Migrations
+│   │   │   │   └── 2019_07_01_240880_create_suppliers_table.php
+│   │   │   └── Seeders
+│   │   │       ├── DatabaseSeeder.php
+│   │   │       └── SuppliersTableSeeder.php
+│   │   ├── Http
+│   │   │   ├── Controllers
+│   │   │   │   ├── Api
+│   │   │   │   │   └── SupplierController.php
+│   │   │   │   ├── SupplierController.php
+│   │   │   │   └── SupplierGuestController.php
+│   │   │   ├── Requests
+│   │   │   │   └── SupplierFormRequest.php
+│   │   │   ├── Resources
+│   │   │   │   └── SupplierResource.php
+│   │   │   └── Routes
+│   │   │       ├── Api.php
+│   │   │       ├── Web.php
+│   │   │       └── WebGuest.php
+│   │   ├── Models
+│   │   │   ├── Supplier.php
+│   │   │   └── Traits
+│   │   │       ├── Boots
+│   │   │       │   └── QueryFilterSuppliersByUsers.php
+│   │   │       ├── Scopes
+│   │   │       │   └── SuppliersOnlyCompanyScope.php
+│   │   │       ├── SupplierFunction.php
+│   │   │       └── SupplierRelationship.php
+│   │   ├── Notifications
+│   │   │   └── LinkToSupplierActivation.php
+│   │   ├── Pipelines
+│   │   │   └── SanitizeMonthlyPayment.php
+│   │   ├── Policies
+│   │   │   └── SupplierPolicy.php
+│   │   ├── Providers
+│   │   │   ├── AuthServiceProvider.php
+│   │   │   ├── RouteServiceProvider.php
+│   │   │   └── SupplierServiceProvider.php
+│   │   ├── Repositories
+│   │   │   ├── Filterable
+│   │   │   │   └── SupplierBuilderFilter.php
+│   │   │   └── SupplierRepository.php
+│   │   ├── Resources
+│   │   │   └── Views
+│   │   │       ├── _filter.blade.php
+│   │   │       ├── _form.blade.php
+│   │   │       ├── _header.blade.php
+│   │   │       ├── create.blade.php
+│   │   │       ├── edit.blade.php
+│   │   │       └── index.blade.php
+│   │   └── Services
+│   │       └── SupplierService.php
+│   └── Users
+│       ├── Console
+│       │   ├── Closures
+│       │   │   └── ClosureCommands.php
+│       │   └── Commands
+│       │       └── UserCommand.php
+│       ├── Database
+│       │   ├── Factories
+│       │   │   ├── UserAdminRoleFactory.php
+│       │   │   ├── UserCompanyRoleFactory.php
+│       │   │   ├── UserFactory.php
+│       │   │   └── UserSuperAdminRoleFactory.php
+│       │   ├── Migrations
+│       │   │   ├── 2019_07_01_049635_create_roles_table.php
+│       │   │   ├── 2019_07_01_113233_create_logins_table.php
+│       │   │   ├── 2019_07_01_117085_create_users_table.php
+│       │   │   └── 2019_08_23_101100_add_session_id_to_users_table.php
+│       │   └── Seeders
+│       │       ├── AdminsUsersTableSeeder.php
+│       │       ├── CompaniesUsersTableSeeder.php
+│       │       ├── DatabaseSeeder.php
+│       │       ├── RolesTableSeeder.php
+│       │       ├── SQL
+│       │       │   └── roles.sql
+│       │       └── SuperAdminsUsersTableSeeder.php
+│       ├── Http
+│       │   ├── Controllers
+│       │   │   ├── Api
+│       │   │   │   └── UserController.php
+│       │   │   └── UserController.php
+│       │   ├── Requests
+│       │   │   └── UserFormRequest.php
+│       │   └── Routes
+│       │       ├── Api.php
+│       │       └── Web.php
+│       ├── Models
+│       │   ├── Admin.php
+│       │   ├── Company.php
+│       │   ├── Role.php
+│       │   ├── SuperAdmin.php
+│       │   ├── Traits
+│       │   │   ├── RoleRelationship.php
+│       │   │   ├── UserAccessor.php
+│       │   │   ├── UserBoot.php
+│       │   │   ├── UserFunction.php
+│       │   │   ├── UserRelationship.php
+│       │   │   └── UserScope.php
+│       │   └── User.php
+│       ├── Observers
+│       │   └── UserObserver.php
+│       ├── Policies
+│       │   └── UserPolicy.php
+│       ├── Providers
+│       │   ├── AuthServiceProvider.php
+│       │   ├── BindServiceProvider.php
+│       │   ├── EventServiceProvider.php
+│       │   ├── RouteServiceProvider.php
+│       │   └── UserServiceProvider.php
+│       ├── Repositories
+│       │   ├── Criteria
+│       │   │   ├── JoinRoleCriteria.php
+│       │   │   └── UserPermissionCriteria.php
+│       │   ├── Filterable
+│       │   │   └── UserBuilderFilter.php
+│       │   ├── Filters
+│       │   │   └── NameOrEmail.php
+│       │   ├── RoleRepository.php
+│       │   └── UserRepository.php
+│       ├── Resources
+│       │   ├── Lang
+│       │   │   ├── en
+│       │   │   │   └── messages.php
+│       │   │   └── pt_BR
+│       │   │       └── messages.php
+│       │   └── Views
+│       │       ├── _filter.blade.php
+│       │       ├── _form.blade.php
+│       │       ├── _header.blade.php
+│       │       ├── create.blade.php
+│       │       ├── edit.blade.php
+│       │       └── index.blade.php
+│       └── Services
+│           └── UserService.php
+├── Support
+│   ├── Console
+│   │   └── Routing
+│   │       └── RouteFile.php
+│   ├── Database
+│   │   ├── Console
+│   │   │   ├── ArtisanServiceProvider.php
+│   │   │   ├── Factories
+│   │   │   │   ├── FactoryMakeCommand.php
+│   │   │   │   └── stubs
+│   │   │   │       └── factory.stub
+│   │   │   ├── Migrations
+│   │   │   │   ├── Contracts
+│   │   │   │   │   └── MigrationConstants.php
+│   │   │   │   ├── MigrateCommand.php
+│   │   │   │   ├── MigrateMakeCommand.php
+│   │   │   │   ├── ResetCommand.php
+│   │   │   │   ├── RollbackCommand.php
+│   │   │   │   ├── StatusCommand.php
+│   │   │   │   └── Traits
+│   │   │   │       └── MigrationPathsTrait.php
+│   │   │   ├── Seeds
+│   │   │   │   ├── SeedCommand.php
+│   │   │   │   ├── SeederMakeCommand.php
+│   │   │   │   └── stubs
+│   │   │   │       └── seeder.stub
+│   │   │   └── Traits
+│   │   │       ├── DefaultToGeneratorCommand.php
+│   │   │       ├── DomainArgument.php
+│   │   │       └── DomainComponentNamespace.php
+│   │   ├── ConsoleSupportServiceProvider.php
+│   │   └── Eloquent
+│   │       └── ModelFactory.php
+│   ├── Domain
+│   │   └── ServiceProvider.php
+│   ├── Exceptions
+│   │   ├── BaseException.php
+│   │   └── HttpException
+│   │       ├── BadRequestException.php
+│   │       ├── ConflictException.php
+│   │       ├── ForbiddenException.php
+│   │       ├── InternalServerErrorException.php
+│   │       ├── NotFoundException.php
+│   │       ├── RequestTimeoutException.php
+│   │       ├── RequestUriTooLongException.php
+│   │       ├── UnauthorizedException.php
+│   │       └── UnprocessableEntityException.php
+│   ├── Helpers
+│   │   └── ApplicationHelper.php
+│   ├── Http
+│   │   └── Controller.php
+│   ├── Localization
+│   │   └── LocalizationServiceProvider.php
+│   ├── Models
+│   │   ├── BaseCollection.php
+│   │   ├── BaseEloquentBuilder.php
+│   │   └── BaseModel.php
+│   ├── Queue
+│   │   ├── HorizonApplicationServiceProvider.php
+│   │   └── HorizonServiceProvider.php
+│   ├── Repository
+│   │   ├── Eloquent
+│   │   │   ├── BaseRepository.php
+│   │   │   ├── Contracts
+│   │   │   │   ├── CriterionInterface.php
+│   │   │   │   └── RepositoryInterface.php
+│   │   │   ├── Criteria
+│   │   │   │   └── FindWhere.php
+│   │   │   ├── Filterable
+│   │   │   │   ├── Clauses
+│   │   │   │   │   ├── OrWhereClause.php
+│   │   │   │   │   ├── OrWhereLikeClause.php
+│   │   │   │   │   ├── WhereClause.php
+│   │   │   │   │   └── WhereLikeClause.php
+│   │   │   │   ├── Constants
+│   │   │   │   │   ├── GroupBy.php
+│   │   │   │   │   ├── Limit.php
+│   │   │   │   │   ├── OrderBy.php
+│   │   │   │   │   ├── Page.php
+│   │   │   │   │   └── SortBy.php
+│   │   │   │   ├── Contracts
+│   │   │   │   │   ├── ClausesInterface.php
+│   │   │   │   │   └── FiltersInterface.php
+│   │   │   │   └── QueryBuilderFilter.php
+│   │   │   ├── Operations
+│   │   │   │   ├── RepositoryCreate.php
+│   │   │   │   ├── RepositoryDelete.php
+│   │   │   │   ├── RepositoryRead.php
+│   │   │   │   └── RepositoryUpdate.php
+│   │   │   └── Traits
+│   │   │       ├── CacheableRepository.php
+│   │   │       └── HandleCriteria.php
+│   │   └── Exceptions
+│   │       └── RepositoryException.php
+│   ├── Service
+│   │   ├── BaseService.php
+│   │   └── Operations
+│   │       ├── ServiceCreate.php
+│   │       ├── ServiceDelete.php
+│   │       ├── ServiceRead.php
+│   │       └── ServiceUpdate.php
+│   ├── Specifications
+│   │   ├── AbstractPermissionSpecification.php
+│   │   ├── AbstractRoleSpecification.php
+│   │   ├── AndSpecification.php
+│   │   ├── Contracts
+│   │   │   └── Specification.php
+│   │   ├── NotSpecification.php
+│   │   └── OrSpecification.php
+│   ├── SupportServiceProvider.php
+│   ├── Validator
+│   │   └── FormRequestValidator.php
+│   └── View
+│       ├── Building
+│       │   ├── BladeExtensionsServiceProvider.php
+│       │   ├── FormServiceProvider.php
+│       │   └── LayoutServiceProvider.php
+│       ├── Composers
+│       │   └── FormValidationClassComposer.php
+│       └── ViewServiceProvider.php
+└── Units
+    ├── Auth
+    │   ├── Http
+    │   │   ├── Controllers
+    │   │   │   ├── Api
+    │   │   │   │   ├── AuthController.php
+    │   │   │   │   ├── Controller.php
+    │   │   │   │   ├── ForgotPasswordController.php
+    │   │   │   │   ├── MeController.php
+    │   │   │   │   ├── RegisterController.php
+    │   │   │   │   ├── ResetPasswordController.php
+    │   │   │   │   └── Traits
+    │   │   │   │       ├── Respond.php
+    │   │   │   │       └── Token.php
+    │   │   │   └── Web
+    │   │   │       ├── Controller.php
+    │   │   │       ├── ForgotPasswordController.php
+    │   │   │       ├── LoginController.php
+    │   │   │       ├── RegisterController.php
+    │   │   │       ├── ResetPasswordController.php
+    │   │   │       └── VerificationController.php
+    │   │   ├── Middleware
+    │   │   │   ├── ApiAuthenticate.php
+    │   │   │   └── CheckRole.php
+    │   │   ├── Resources
+    │   │   │   └── UserResource.php
+    │   │   └── Routes
+    │   │       ├── Api.php
+    │   │       └── Web.php
+    │   ├── Listeners
+    │   │   ├── SendEmailSuccessfullyVerifiedNotification.php
+    │   │   ├── SendPasswordSuccessfullyResetNotification.php
+    │   │   └── SendVerifyEmailNotification.php
+    │   ├── Login.php
+    │   ├── Notifications
+    │   │   ├── EmailSuccessfullyVerified.php
+    │   │   ├── LinkToResetPassword.php
+    │   │   ├── LinkToVerifyEmail.php
+    │   │   ├── PasswordSuccessfullyReset.php
+    │   │   ├── ResetPasswordNotificationToMail.php
+    │   │   └── VerifyEmailNotificationToMail.php
+    │   ├── Providers
+    │   │   ├── AuthServiceProvider.php
+    │   │   ├── EventServiceProvider.php
+    │   │   ├── RouteServiceProvider.php
+    │   │   └── UnitServiceProvider.php
+    │   ├── Resources
+    │   │   └── Views
+    │   │       ├── login.blade.php
+    │   │       ├── passwords
+    │   │       │   ├── email.blade.php
+    │   │       │   └── reset.blade.php
+    │   │       ├── register.blade.php
+    │   │       └── verify.blade.php
+    │   ├── Services
+    │   │   ├── OneSessionPerUser.php
+    │   │   ├── StoreUserAndCompany.php
+    │   │   └── UpdateUserLastLogin.php
+    │   └── User.php
+    └── Dashboard
+        ├── Http
+        │   ├── Controllers
+        │   │   └── Web
+        │   │       └── DashboardController.php
+        │   └── Routes
+        │       └── Web.php
+        ├── Providers
+        │   ├── RouteServiceProvider.php
+        │   └── UnitServiceProvider.php
+        └── Resources
+            └── Views
+                └── index.blade.php
+```

@@ -1197,9 +1197,9 @@ body {
 }
 
 .app-top-header .app-toggle-top-header-menu:before {
-    content: '\f2f8';
+    content: '\F360';
     float: right;
-    font-family: 'Material Icons';
+    font-family: 'Material Design Icons';
     font-size: 2.077rem;
     line-height: 22px;
     color: #c5c5c5;
@@ -1212,7 +1212,7 @@ body {
 }
 
 .app-top-header .app-toggle-top-header-menu.collapsed:before {
-    content: '\f2f2';
+    content: '\F35D';
 }
 
 @media (max-width: 767.98px) {
@@ -2184,16 +2184,16 @@ body {
 }
 
 .app-left-sidebar .left-sidebar-toggle:before {
-    content: '\f2f2';
+    content: '\F35D';
     float: right;
-    font-family: 'Material Icons';
+    font-family: 'Material Design Icons';
     font-size: 2.077rem;
     line-height: 22px;
     color: #c5c5c5;
 }
 
 .app-left-sidebar .left-sidebar-toggle.open:before {
-    content: '\f2f8';
+    content: '\F360';
 }
 
 @media (max-width: 767.98px) {
@@ -2533,9 +2533,9 @@ body {
 }
 
 .app-left-sidebar .sidebar-elements li.parent > a:before {
-    content: '\f2f2';
+    content: '\F35D';
     float: right;
-    font-family: 'Material Icons';
+    font-family: 'Material Design Icons';
     font-size: 1.615rem;
     color: #b0b0b0;
 }
@@ -2547,7 +2547,7 @@ body {
 }
 
 .app-left-sidebar .sidebar-elements li.parent.open > a:before {
-    content: '\f2f8';
+    content: '\F360';
 }
 
 .app-left-sidebar .sidebar-elements li.open > ul {

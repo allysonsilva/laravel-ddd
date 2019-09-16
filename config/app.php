@@ -2,6 +2,27 @@
 
 return [
 
+    'debug_blacklist' => [
+        '_COOKIE' => array_keys($_COOKIE),
+        '_SERVER' => array_keys($_SERVER),
+        '_ENV' => array_keys($_ENV),
+        // '_POST' => array_keys($_POST)
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Version
+    |--------------------------------------------------------------------------
+    | Retrieves the current version of the application according to the
+    | contents of the VERSION file.
+    |
+    */
+    'version' => (function() {
+        [$major, $minor, $path] = explode('.', file_get_contents(base_path('VERSION')));
+
+        return 'v' .$major. '.' .$minor;
+    })(),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -67,7 +88,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +101,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +127,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------
@@ -163,19 +184,26 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        App\Providers\FormServiceProvider::class,
-        App\Providers\HorizonServiceProvider::class,
-
-        /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Core\Providers\AppServiceProvider::class,
+        App\Core\Providers\RouteServiceProvider::class,
+
+        /*
+         * Support Service Providers...
+         */
+        App\Support\SupportServiceProvider::class,
+
+        /*
+         * Domains ...
+         */
+        App\Domains\DomainServiceProvider::class,
+
+        /*
+         * Units ...
+         */
+        App\Units\Auth\Providers\UnitServiceProvider::class,
+        App\Units\Dashboard\Providers\UnitServiceProvider::class,
 
     ],
 

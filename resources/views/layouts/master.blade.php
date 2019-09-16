@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+    @hasSection('head', true)
     <!-- Head -->
     @head
     @endhead
     <!-- Head -->
+    @endif
 
     <body class="@yield('bodyClass', 'app')">
 
         <!-- Wrapper -->
         <div class="app-wrapper app-fixed-sidebar @yield('classWrapper')">
 
+            @hasSection('navigation', true)
             <!-- Header -->
             @navigation
             @endnavigation
             <!-- Header -->
+            @endif
 
             <!-- Section -->
             <section>
 
+                @hasSection('left-sidebar', true)
                 <!-- Left -->
-                @leftSidebar
-                @endleftSidebar
+                @left
+                @endleft
                 <!-- Left -->
+                @endif
 
                 <div class="app-content">
                     <main>

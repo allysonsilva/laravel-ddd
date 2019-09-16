@@ -1,1 +1,1 @@
-@component('componentsForm::_common', array_merge(['type' => 'password'], compact('name', 'textLabel', 'attributes')))@endcomponent
+@component('components_form::_common', array_merge(['type' => 'password'], compact('name', 'textLabel', 'attributes', 'classCompAround', 'classComp', 'classLabel')))@endcomponent
